@@ -28,16 +28,16 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x8000 --ramdisk_offset 0x01000000 --tag
 
 # phony empty kernel to satisfy build system, but this device does not
 # include a kernel in the recovery image -- flash to recovery_ramdisk
-TARGET_PREBUILT_KERNEL := device/huawei/blanc/dummykernel
+TARGET_PREBUILT_KERNEL := device/huawei/charlotte/dummykernel
 # else uncomment below to build from sauce
-# TARGET_KERNEL_SOURCE := kernel/huawei/blanc
-# TARGET_KERNEL_CONFIG := blanc_defconfig
+# TARGET_KERNEL_SOURCE := kernel/huawei/charlotte
+# TARGET_KERNEL_CONFIG := charlotte_defconfig
 
 # NOTE I only bother properly setting recovery image size
 BOARD_BOOTIMAGE_PARTITION_SIZE := 41943040
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1493696512
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 30266449920
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
@@ -53,6 +53,6 @@ TW_NO_SCREEN_BLANK := true
 TW_DEFAULT_BRIGHTNESS := "2048"
 TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/Battery
 # Device crashes if /sbin/modprobe is present so this is needed:
-BOARD_CUSTOM_BOOTIMG_MK := device/huawei/blanc/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/huawei/charlotte/custombootimg.mk
 # MTP will not work until we update it to support ffs
 TW_EXCLUDE_MTP := true

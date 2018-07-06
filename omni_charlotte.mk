@@ -31,15 +31,15 @@ PRODUCT_PACKAGES += \
     charger
 
 PRODUCT_COPY_FILES += \
-    device/huawei/blanc/dummykernel:kernel
+    device/huawei/charlotte/dummykernel:kernel
 
-PRODUCT_NAME := omni_blanc
-PRODUCT_DEVICE := blanc
+PRODUCT_NAME := omni_charlotte
+PRODUCT_DEVICE := charlotte
 PRODUCT_BRAND := Huawei
-PRODUCT_MODEL := Honor View 10
+PRODUCT_MODEL := Honor P20 Pro
 PRODUCT_MANUFACTURER := Huawei
 
 # Kernel inline build
-#TARGET_KERNEL_CONFIG := blanc_defconfig
-#TARGET_VARIANT_CONFIG := blanc_defconfig
-#TARGET_SELINUX_CONFIG := blanc_defconfig
+#TARGET_KERNEL_CONFIG := charlotte_defconfig
+#TARGET_VARIANT_CONFIG := bcharlotte_defconfig
+#TARGET_SELINUX_CONFIG := charlotte_defconfig

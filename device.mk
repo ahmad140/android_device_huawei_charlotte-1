@@ -1,5 +1,5 @@
 #
-# Copyright 2012 The Android Open Source Project
+# Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,22 +14,15 @@
 # limitations under the License.
 #
 
-# Sample: This is where we'd set a backup provider if we had one
-# $(call inherit-product, device/sample/products/backup_overlay.mk)
-
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/treble_common.mk)
 
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    charger
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 
-PRODUCT_COPY_FILES += \
-    device/huawei/charlotte/dummykernel:kernel
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2240
+TARGET_SCREEN_WIDTH := 1080
 
-PRODUCT_NAME := omni_charlotte
-PRODUCT_DEVICE := charlotte
-PRODUCT_BRAND := Huawei
-PRODUCT_MODEL := Honor P20 Pro
-PRODUCT_MANUFACTURER := Huawei
+$(LOCAL_PATH)/recovery/root/etc/twrp.fstab:recovery/root/etc/recovery.fstab
